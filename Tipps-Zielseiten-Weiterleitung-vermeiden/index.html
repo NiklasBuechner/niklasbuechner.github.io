@@ -1,0 +1,568 @@
+<!doctype html>
+<html ⚡ lang="de">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <title>Zielseiten Weiterleitung vermeiden und die Ladezeiten beschleunigen | Webseiten Optimierungs Tipps</title>
+    <meta name="description" content="Zielseiten Weiterleitungen sind ein Problem, das es zu vermeiden gilt. Das Problem ist, dass die Weiterleitung Deine Seite verlangsamen.">
+    <meta name="keywords" content="Zielseiten Weiterleitung vermeiden, beschleunigen, Ladezeiten, Webseite, Geschwindigkeit, optimieren">
+    <link rel="canonical" href="http://www.webseiten-optimierungs-tipps.de/Tipps/Zielseiten-Weiterleitung-vermeiden/" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <!--<script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>-->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        *
+        {
+            box-sizing: border-box;
+        }
+
+        body
+        {
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+        }
+
+        header
+        {
+            position: fixed;
+            width: 100%;
+            margin-bottom: 20px;
+            z-index: 100;
+        }
+        footer
+        {
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .dark
+        {
+            background: #222;
+            color: #9d9d9d;
+        }
+
+        p
+        {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: #337ab7;
+            text-decoration: none;
+        }
+        a:focus,a:hover {
+            color:#23527c;
+            text-decoration:underline;
+        }
+
+        .container
+        {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .menu-padding
+        {
+            height: 20px;
+        }
+
+        .cover-image
+        {
+            background: url("/img/bg.jpg") no-repeat top center;
+            background-size:cover;
+            text-align: center;
+            height: 400px;
+        }
+
+
+        h1, .h1
+        {
+            font-size: 36px;
+        }
+        h2, .h2
+        {
+            padding: 5px;
+            border-bottom: 1px solid grey;
+            font-size: 30px;
+        }
+        h5, .h5
+        {
+            font-size: 14px;
+        }
+        h1, h2, h3, .h1, .h2, .h3
+        {
+            margin-top:20px;
+            margin-bottom: 10px;
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+        {
+            font-weight: 500;
+            line-height: 1.1;
+            color: #333;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+        .nav-header
+        {
+            float: left;
+            display: block;
+        }
+        .nav-header div
+        {
+            display: inline-block;
+        }
+        .nav-header .second
+        {
+            position: relative;
+            top: -7.5px;
+        }
+        a.navbar-brand
+        {
+            padding: 10px;
+            overflow: visible;
+            display: inline-block;
+            font-size: 20px;
+            line-height: 20px;
+        }
+        a.navbar-brand amp-img
+        {
+            height: 30px;
+        }
+        .navbar-right
+        {
+            float: right;
+        }
+        .navbar-right ul
+        {
+            margin-top: 0;
+        }
+        .navbar-right li
+        {
+            float: left;
+            list-style: none;
+        }
+        .navbar-right li a
+        {
+            display: block;
+            line-height: 18px;
+            padding: 18px;
+        }
+
+        .white-links a
+        {
+            text-decoration: none;
+            color: #9d9d9d;
+        }
+        .white-links a:hover, .white-links a:focus
+        {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        amp-sidebar
+        {
+            width: 60%;
+            border-left: 1px solid #222;
+            line-height: 50px;
+            font-size: 20px;
+        }
+        amp-sidebar ul
+        {
+            padding: 0px;
+        }
+        amp-sidebar li
+        {
+            list-style: none;
+        }
+
+        a.hamburger
+        {
+            font-size: 30px;
+            line-height: 50px;
+        }
+        a.hamburger:hover, a.hamburger:focus
+        {
+            text-decoration: none;
+        }
+        hr
+        {
+            margin:15px;
+        }
+
+        .main-column
+        {
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 100%;
+        }
+
+        .small-column
+        {
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 25%;
+        }
+        .big-column
+        {
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 75%;
+        }
+
+        @media (max-width: 767px)
+        {
+            .hidden-xs
+            {
+                visibility: hidden;
+                display: none;
+            }
+            a.navbar-brand.hidden-xs
+            {
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+        @media (min-width: 768px)
+        {
+            .main-column
+            {
+                width: 50%;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 991px)
+        {
+            .container
+            {
+                width: 750px;
+            }
+
+            .hidden-sm
+            {
+                visibility: hidden;
+                display: none;
+            }
+            a.navbar-brand.hidden-sm
+            {
+                visibility: hidden;
+                display: none;
+            }
+        }
+        @media (max-width: 991px)
+        {
+            .big-column
+            {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px)
+        {
+            .container
+            {
+                width: 970px;
+            }
+
+            .hidden-md
+            {
+                visibility: hidden;
+                display: none;
+            }
+            a.navbar-brand.hidden-md
+            {
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+        @media (min-width: 1200px)
+        {
+            .container
+            {
+                width: 1170px;
+            }
+
+            .hidden-lg
+            {
+                visibility: hidden;
+                display: none;
+            }
+            a.navbar-brand.hidden-lg
+            {
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+
+        .info
+        {
+            border: 1px solid green;
+            background: lightgreen;
+        }
+        .center
+        {
+            margin:auto;
+        }
+        .tc
+        {
+            text-align:center;
+        }
+        .tr
+        {
+            text-align: right;
+        }
+        .fl
+        {
+            float:left;
+        }
+        .fr
+        {
+            float:right;
+        }
+        .cl
+        {
+            clear:both;
+        }
+        .p90
+        {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+<amp-sidebar id="sidebar" layout="nodisplay" side="right" class="tc dark white-links">
+    <p>
+        <amp-img src="/img/Logo1_400.png" width="100" height="100"></amp-img>
+    </p>
+    <hr />
+    <ul>
+        <li>
+            <a href="/" title="Startseite">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="/Tipps/" title="Alle Tipps zur Optimierung">
+                Tipps
+            </a>
+        </li>
+        <li>
+            <a href="/Blog/" title="Blog">
+                Blog
+            </a>
+        </li>
+        <li>
+            <a href="/Tools-WOTipps-HTML-komprimieren-und-reduzieren/" title="Tools zur Webseitenoptimierung">
+                Tools
+            </a>
+        </li>
+        <li>
+            <a href="/Impressum/" title="Impressum">
+                Impressum
+            </a>
+        </li>
+    </ul>
+</amp-sidebar>
+<header class="dark white-links">
+    <nav class="container">
+        <div class="nav-header">
+            <div>
+                <a class="navbar-brand first" href="/">
+                    <amp-img src="/img/Logo1_400.png" width="30" height="30"></amp-img>
+                </a>
+            </div>
+            <div class="second">
+                <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="/">Webseiten Optimierung</a>
+                <a class="navbar-brand hidden-xs" href="/">Webseiten Optimierungs Tipps</a>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a class="hamburger hidden-lg hidden-md hidden-sm"
+               on="tap:sidebar.toggle">&#9776;</a>
+            <ul class="hidden-xs">
+                <li>
+                    <a href="/" title="Startseite">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/Tipps/" title="Alle Tipps zur Optimierung">
+                        Tipps
+                    </a>
+                </li>
+                <li>
+                    <a href="/Blog/" title="Blog">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/Tools-WOTipps-HTML-komprimieren-und-reduzieren/" title="Tools zur Webseitenoptimierung">
+                        Tools
+                    </a>
+                </li>
+                <li>
+                    <a href="/Impressum/" title="Impressum">
+                        Impressum
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section class="menu-padding">
+    &nbsp;
+</section>
+<section>
+    <div class="cover-image">&nbsp;</div>
+</section>
+<div class="container">
+    <a name="Einfuehrung"></a>
+    <p>&nbsp;</p>
+    <p>
+        <a href="/Tipps/" title="Alle Tipps anzeigen">
+            &laquo; Zur&uuml;ck zu allen Tipps
+        </a>
+    </p>
+</div>
+<section class="container">
+    <h1>Weiterleitungen vermeiden</h1>
+</section>
+<section class="container">
+    <div class="fl small-column hidden-xs hidden-sm">
+        <h5>Gliederung</h5>
+        <ul>
+            <li>
+                <a href="#Problem" title="Entferne alle irrelevanten Metadaten">
+                    Das Problem
+                </a>
+            </li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>
+            <a href="/Tipps/" title="Alle Tipps anzeigen">
+                &laquo; Weitere Tipps gibt es hier
+            </a>
+        </p>
+    </div>
+    <a name="Problem"></a>
+    <div class="fr big-column">
+        <a name="Problem"></a>
+        <p class="tr">
+            <a href="/" title="Webseiten Optimierungs Tipps">
+                Home
+            </a>
+            /
+            <a href="/Tipps/" title="Alle Tipps anzeigen">
+                Tipps
+            </a>
+            /
+            Zielseiten-Weiterleitungen vermeiden
+            /
+        </p>
+        <h2>Das Problem</h2>
+        <p class="tr">
+            <a href="/Tipps/Warum-sind-Ladezeiten-wichtig/" title="Ladezeiten sind wichtig weil...">
+                Erfahre hier, warum die Ladezeiten deiner Webseite wichtig sind
+            </a>
+        </p>
+        <p>
+            Wenn Du eine Webseite besuchst, ist es dir vielleicht schon einmal aufgefallen, dass sich
+            die URL in Deinem Browser ver&auml;ndert hat. Wenn du z.B. google.de in Deinen Browser eingibst,
+            so ver&auml;ndert sich die URL auf https://www.google.de/?gws_rd=ssl. Das nennt man eine
+            Weiterleitung.
+        </p>
+        <p>
+            Die Problematik von Weiterleitungen hat 2 Facetten: 1. Deine Ladezeit verl&auml;ngert sich und 2.
+            Es kann sein, dass Google nicht allen Weiterleitungen folgt. Jede Weiterleitung verhindert das
+            Laden aller wichtigen Dateien Deiner Webseite. Dazu z&auml;hlen das Design, der Inhalt, aber auch
+            Bilder und Videos.
+        </p>
+        <p>
+            <amp-img src="/img/Tipps/Weiterleitung/Weiterleitung.png" width="600" height="562.5"
+                     title="Das Herunterladen einer Webseite MIT Browser Cache"
+                     alt="Das Herunterladen einer Webseite MIT Browser Cache"
+                     class="hidden-xs hidden-sm"></amp-img>
+            <amp-img src="/img/Tipps/Weiterleitung/Weiterleitung.png" width="800" height="750"
+                     title="Das Herunterladen einer Webseite MIT Browser Cache"
+                     alt="Das Herunterladen einer Webseite MIT Browser Cache"
+                     class="hidden-md hidden-lg" layout="responsive"></amp-img>
+        </p>
+        <p>
+            Das gro&szlig;e Problem ist dabei, dass Dein Browser erst den Inhalt Deiner Webseite herunterl&auml;dt
+            und danach gleichzeitig 8 anderen Dateien herunterladen kann. Wenn ein Webseitenbesucher
+            nun von einer Seite auf eine andere Seite weitergeleitet wird, kann der Browser die anderen 7
+            Verbindungen noch nicht aufmachen. Er wei&szlig; ja noch nicht, welche anderen Dateien er herunterladen
+            soll. Du verschwendest also wertvolle Zeit und die M&ouml;glichkeit gleichzeitig mehrere Dateien
+            herunterzuladen.
+        </p>
+        <p>
+            Weiterleitungen sind vorallem auf mobilen Ger&auml;ten nervig. Stelle Dir folgendes Szenario vor:
+            Ein Besucher Deiner Webseite googelt deine Webseite. Wenn er auf den Google Link klickt, kommt
+            er auf eine weitere Google-Seite (so kann Google herausfinden, welche Links angeklickt werden).
+            Diese Unterseite zeigt aber nichts an, sondern leitet ihn direkt auf Deine Webseite weiter (1.
+            Weiterleitung). Auf Deiner Webseite stellst Du fest, dass der Nutzer mit einem Smartphone auf
+            Deine Seite zugreift. Da Du (in diesem Szenario) eine eigene Subdomain (m.DeineWebseite.de)
+            hast, leitest Du ihn auf diese Unterseite weiter (2. Weiterleitung). Viele Webseiten leiten
+            den Nutzer auch intern weiter, da sich die Struktur ge&auml;ndert hat und der Nutzer auf der richtigen
+            Seite landen soll. Andere Gr&uuml;nde sind das Tracken von Nutzer oder das Weiterleiten
+            nach dem Abschicken eines Formulars. Ist dies bei dir der Fall wird der Nutzer erneut
+            weitergeleitetet.
+        </p>
+        <a name="Loesung"></a>
+        <p>
+            Selbst wenn jede Weiterleitung nur 300 Millisekunden ben&ouml;tigt, hat man somit fast eine Sekunde
+            verschenkt. Zus&auml;tzlich dazu muss man auch Bedenken, dass Google beim Speichern Deiner Webseite
+            nur 3 Weiterleitungen folgt. Wenn Google nach drei Weiterleitungen keinen Inhalt findet, wird
+            der Inhalt bei der Googlesuche nicht gefunden.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <a href="/Tipps/" title="Alle Tipps anzeigen">
+                &laquo; Zur&uuml;ck zu allen Tipps
+            </a>
+        </p>
+    </div>
+</section>
+<section class="container cl">
+    <p>&nbsp;</p>
+</section>
+<footer class="dark">
+    &copy; Niklas B&uuml;chner | <a href="/Impressum/" rel="nofollow">Impressum</a>
+    <amp-analytics type="googleanalytics">
+        <script type="application/json">
+            {
+                "vars": {
+                    "account": "UA-90631904-1"
+                },
+                "triggers": {
+                    "trackPageview": {
+                        "on": "visible",
+                        "request": "pageview"
+                    }
+                }
+            }
+        </script>
+    </amp-analytics>
+
+</footer>
+</body>
+</html>
