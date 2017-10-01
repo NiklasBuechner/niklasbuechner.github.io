@@ -1,0 +1,17 @@
+footer
+{
+    background: black;
+    color: white;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+p
+{
+    padding: 10px;
+}
+h2
+{
+    border-bottom: 1px solid grey;
+    padding:5px;
+}
