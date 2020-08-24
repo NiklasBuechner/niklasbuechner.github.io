@@ -216,6 +216,10 @@ img.right{
   width: 32px;
 }
 
+.copyright {
+    text-align: center;
+}
+
 /* --- FOOTER END ---- */
 
 /* ============= Device specific fixes ======= */
