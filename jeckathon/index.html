@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>JECKathon - Gemeinsam Karneval retten!</title>
+    <link href="https://fonts.googleapis.com/css?family=Acme&amp;display=swap" rel="stylesheet">
+    <style tyle="text/css">
+        html {
+            background-color: rgba(169, 198, 170, 1);
+        }
+
+        #game {
+            display: grid;
+            grid-template-rows: auto 100px;
+
+            background: white;
+            border-radius: 20px;
+            width: 400px;
+            height: 350px;
+            margin-top: 200px;
+            margin: auto;
+            padding: 15px;
+            text-align: center;
+            font-family: "Acme", sans-serif;
+        }
+
+        h3 {
+            font-size: 21px;
+            color: rgb(199, 103, 60);
+        }
+
+        #game-content {
+            margin: auto;
+        }
+
+        #game-buttons {
+            grid-row: 2;
+            align-self: stretch;
+            margin-bottom: 20px;
+            align-items: stretch;
+        }
+
+        #game-buttons a {
+            background-color: rgb(199, 103, 60);
+            border-radius: 15px;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        const rawData = `
+Bezeichnung,Kategorie,Antwort,Hilfsmittel aus der Box benötigt?,In Spiel mitaufnhemen?,In Box berücksichtigt?,Kommentar
+"Hole dir ein Bier aus der Box. Wenn die leer ist, hol dir eins aus dem Kühlschrank.",Trinken,,Ja,Ja,Ja,Ggf. öfters
+Schaue dir dieses Video an (um das Karnevalssitzungsfeeling zu bekommen),Aktion,,Nein,Ja,,Link auf der Karte (QR-Code?)
+Spiele dein Lieblingslied,Aktion,,Nein,Ja,,
+Beschreibe dein Lieblingskostüm,Aktion,,Nein,Ja,,
+Erzähle einen Witz,Aktion,,Nein,Ja,,
+Was ist dein Lieblingsmischgetränk?,Aktion,,Nein,Ja,,
+Ein anderer muss einen Witz erzählen,Aktion,,Nein,Ja,,
+Mische dir einen Drink mit den Zutaten aus deiner Küche,Trinken,,Nein,Ja,,
+Lies dir den Text eines Karnevalslied vor,Aktion,,Nein,Ja,,
+Male ein Lama,Aktion,,Nein,Ja,,Könnten wir noch öfters reinnehmen --> Andere Tiere
+Tanze auf einem Möbelstück deiner Wahl,Aktion,,Nein,Ja,,
+Tanze deinen besten Siegestanz,Aktion,,Nein,Ja,,
+Zünde die Konfettikanone,Aktion,,Ja,Ja,Ja,Ggf. schmeiße das Konfetti über dich?
+Wer ist der größte Lügner?,Aktion,,Nein,Ja,,
+Mache einen Purzelbaum.,Aktion,,Nein,Ja,,
+"Stimme ab, was ihr lieber esst, einen Apfel oder Erdbeeren. Die Leute mit der falschen (Minderheits-) Meinung müssen einen Shot trinken.",Trinken,,Nein,Ja,,"Ggf. mehrere Runden, die Person die es nicht mögen trinken und einer muss die nächste Frages tellen"
+Hänge die Girlande sichtbar auf.,Aktion,,Ja,Ja,Ja,
+Schmincke dich mit geschlossenen Augen.,Aktion,,Ggf.,Ja,Ja,
+Hänge eine Fahne in dein Fenster.,Aktion,,Ja,Ja,Ja,
+Bastel dir einen Karnevalsorden aus den Teilen in der Box.,Aktion,,Ja,Ja,,
+Bastel dir einen Karnevalsorden mit Dingen auf deinem Schreibtisch.,Aktion,,Nein,Ja,,
+Es ist dein Geburtstag alle singen für dich Happy Birthday.,Aktion,,Nein,Ja,,
+Trällere ein Lied.,Aktion,,Nein,Ja,,
+Schätzefrage: Wie viele Stufen der Kölner Dom hat?,Schätzen,,Nein,Ja,,Mit Trinken im Anschluss?
+Erzähle eine peinlich Geschichte.,Aktion,,Nein,Ja,,
+Schätzfrage: Wie alt ist Karneval?,Schätzen,,Nein,Ja,,Mit Trinken im Anschluss?
+Schätzfrage: Wer ist der bekannteste Comedian?,Schätzen,,Nein,Ja,,Auf welcher Grundlage? Mit Trinken im Anschluss?
+"Stoßt auf den ersten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den zweiten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den dritten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den vierten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den fünften Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den sechsten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den siebten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den achten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den neuten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den zehnten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+"Stoßt auf den elften Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
+Stellt das kölsche Grundgesetz zusammen.,Wissen,,Nein,Ja,,
+Beschreibe das Essen “Himmel un Ääd”,Wissen,,Nein,Ja,,
+Beschreibe deine letztes Essen.,Aktion,,Nein,Ja,,
+Was macht für dich Karneval aus?,Aktion,,Nein,Ja,,
+Erzähle deine lustigste Karnevalsgeschichte.,Aktion,,Nein,Ja,,
+Beschreibt das Gericht Halver Hahn.,Wissen,,Nein,Ja,,
+"Wie machst du im Brauhaus bemerkbar, dass du kein Kölsch mehr haben möchtest?",Wissen,,Nein,Ja,,
+Bist du eher Team Kamelle oder Strüssje?,Aktion,,Nein,Ja,,
+Schütte Box 6 über dich.,Aktion,,Ja,Ja,,
+Pflanze eine Blume mit dem Saatgut aus der Box.,Aktion,,Ja,Ja,Ja,
+Glitzer dich mit Glitzer voll.,Aktion,,Ja,Ja,Ja,
+Jeder ohne Kostüm muss einen Shot trinken.,Trinken,,Nein,Ja,,
+Setze die rote Nase aus der Box auf.,Aktion,,Ja,Ja,Ja,
+Versucht alle Kölschsorten aufzuzählen. Wie viele Kölschsorten gibt es?,Wissen,,Nein,Ja,,
+Trinke ein Feigling und trage den Deckel auf der Nase.,Trinken,,Ja,Ja,Ja,
+Schneide dir deine Krawatte ab und klebe dir den Kussmund auf die Wange.,Aktion,,Ja,Ja,Ja,
+Ernennt jemanden der die nächsten 30 min karnevalsmusik im hintergrund laufen lässt,Aktion,,Nein,Ja,,
+Macht ein selfie und postet es.,Aktion,,Nein,Ja,,"FP: Ich persönlich bin nie Fan dieser ""posten""-Aktionskarte in Trinkspielen"
+Leere spielkarten um eigene ereigniskarten zu erstellen,Aktion,,Nein,Ja,,
+Textet eine karnevalsliedstrophe und postet diese unter … facebookpage,Aktion,,Nein,Ja,,"FP: Ich persönlich bin nie Fan dieser ""posten""-Aktionskarte in Trinkspielen"
+Blase die Luftschlangen auf,Aktion,,Ja,Ja,Ja,
+Wie viel Liter Bier sind in einem Kranz Kölsch? ,Wissen,,,,,
+Welcher Turm vom Kölner Dom ist höher? ,Wissen,,,,,
+Was hat Konrad von Hochstaden in Köln im Mund? ,Wissen,,,,,
+Wie viel Liter Bier wird pro Session in Köln getrunken? ,Wissen,,,,,
+Was ist ein Fisternöllche? ,Wissen,,,,,
+Was ist der Katzenbuckel in Köln? ,Wissen,,,,,
+Wie hoch ist der Mont Troodelöh?  ,Wissen,,,,,
+Was ist der Pletchbach? ,Wissen,,,,,
+Wie viele Veedel hat Köln? ,Wissen,,,,,
+`;
+
+        const cards = [];
+        let status = 'not-playing';
+        let cardIndex = -1;
+
+        const parseRawData = () => {
+            const lines = rawData.split('\n');
+            let tableStartedYet = false;
+
+            for (line of lines) {
+                if (tableStartedYet === false) {
+                    if (line.startsWith('Bezeichnung')) {
+                        tableStartedYet = true;
+                    }
+
+                    continue;
+                }
+
+                const fields = [];
+                let inQuotes = false;
+                let field = '';
+                for (character of line) {
+                    switch (character) {
+                        case '"':
+                            inQuotes = !inQuotes;
+                            break;
+                        case ',':
+                            if (inQuotes) {
+                                field += character;
+                            } else {
+                                fields.push(field);
+                                field = '';
+                            }
+                            break;
+                        default:
+                            field += character;
+                            break;
+                    }
+                }
+
+                if (fields.length < 3) {
+                    continue;
+                }
+
+                const card = {
+                    type: fields[1],
+                    question: fields[0],
+                };
+
+                if (fields[2].trim().length > 0) {
+                    card.answer = field[2];
+                }
+
+                cards.push(card);
+            }
+        };
+
+        const shuffle = (array) => {
+            let currentIndex = array.length;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+                // Pick a remaining element...
+                const randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                const temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+        };
+
+        window.addEventListener('load', () => {
+            parseRawData();
+            updateGame();
+        });
+
+        const updateGame = () => {
+            if (status === 'not-playing') {
+                showNotPlayingScreen();
+            } else {
+                showNextCard();
+            }
+        };
+
+        const updateHtmlElements = (content, button) => {
+            document.getElementById('game-content').innerHTML = content;
+            document.getElementById('game-buttons').innerHTML = `<a href="#" onclick="javascript:${button.click}();">${button.label}</a>`;
+        };
+
+        const showNotPlayingScreen = () => {
+            updateHtmlElements(`<h3>Bist du bereit? Spiele mit uns!</h3>`, { click: 'startGame', label: 'Let\'s go!'});
+        };
+
+        const startGame = () => {
+            status = 'playing';
+            shuffle(cards);
+            updateGame();
+        };
+
+        const showNextCard = () => {
+            cardIndex += 1;
+            if (cardIndex === cards.length) {
+                cardIndex = 0;
+            }
+
+            const card = cards[cardIndex];
+            const nextCardButton = {
+                click: 'nextCard',
+                label: 'Nächste Karte',
+            };
+            const showAnswerButton = {
+                click: 'showAnswer',
+                label: 'Antwort zeigen',
+            };
+
+            updateHtmlElements(
+                `
+                <h3>${card.type}</h3>
+                <p>${card.question}</p>
+                `,
+                !!card.answer ? showAnswerButton : nextCardButton,
+            );
+        };
+
+        const nextCard = updateGame;
+
+        const showAnswer = () => {
+            const card = cards[cardIndex];
+            
+            updateHtmlElements(
+                `
+                <h3>${card.type}</h3>
+                <p>${card.question}</p>
+                <p>${card.answer}</p>
+                `,
+                {
+                    click: 'nextCard',
+                    label: 'Nächste Karte',
+                },
+            );
+        };
+    </script>
+</head>
+
+<body>
+    <div id="game">
+        <div id="game-content">
+            <h3>Loading</h3>
+        </div>
+        <div id="game-buttons">
+        </div>
+    </div>
+</body>
+
+</html>
