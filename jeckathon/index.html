@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Acme&amp;display=swap" rel="stylesheet">
     <style tyle="text/css">
         html {
-            background-color: rgba(169, 198, 170, 1);
+            background:none transparent;
         }
 
         #game {
@@ -21,7 +21,7 @@
             margin: auto;
             padding: 15px;
             text-align: center;
-            font-family: "Acme", sans-serif;
+            font-family: sans-serif;
         }
 
         h3 {
@@ -250,7 +250,7 @@ Wie viele Veedel hat Köln? ,Wissen,,,,,
 
         const showAnswer = () => {
             const card = cards[cardIndex];
-            
+
             updateHtmlElements(
                 `
                 <h3>${card.type}</h3>
