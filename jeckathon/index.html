@@ -265,7 +265,7 @@ Wie viele Veedel hat Köln? ,Wissen,Ja,86 Veedel,,,Ja,,
 
         const showAnswer = () => {
             const card = currentCards[cardIndex];
-            const more = !!card.answerUrl ? `<p>Weitere Informationen unter <br /><a href="${card.answerUrl}">${card.answerUrl}</a></p>` : '';
+            const more = !!card.answerUrl ? `<p>Weitere Informationen unter <br /><a href="${card.answerUrl}" target="_blank">${card.answerUrl}</a></p>` : '';
 
             updateHtmlElements(
                 `
