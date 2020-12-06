@@ -22,15 +22,19 @@
             padding: 15px;
             text-align: center;
             font-family: sans-serif;
+            color: white;
         }
 
         h3 {
             font-size: 21px;
-            color: white;
         }
 
         #game-content {
             margin: auto;
+        }
+
+        #game-content a {
+            color: #182C3B;
         }
 
         #game-buttons {
@@ -41,7 +45,7 @@
         }
 
         #game-buttons a {
-            background-color: #ef8986;
+            background-color: #182C3B;
             border-radius: 15px;
             color: white;
             padding: 10px;
@@ -49,80 +53,73 @@
     </style>
     <script type="text/javascript">
         const rawData = `
-Bezeichnung,Kategorie,Antwort,Hilfsmittel aus der Box benötigt?,In Spiel mitaufnhemen?,In Box berücksichtigt?,Kommentar
-"Hole dir ein Bier aus der Box. Wenn die leer ist, hol dir eins aus dem Kühlschrank.",Trinken,,Ja,Ja,Ja,Ggf. öfters
-Schaue dir dieses Video an (um das Karnevalssitzungsfeeling zu bekommen),Aktion,,Nein,Ja,,Link auf der Karte (QR-Code?)
-Spiele dein Lieblingslied,Aktion,,Nein,Ja,,
-Beschreibe dein Lieblingskostüm,Aktion,,Nein,Ja,,
-Erzähle einen Witz,Aktion,,Nein,Ja,,
-Was ist dein Lieblingsmischgetränk?,Aktion,,Nein,Ja,,
-Ein anderer muss einen Witz erzählen,Aktion,,Nein,Ja,,
-Mische dir einen Drink mit den Zutaten aus deiner Küche,Trinken,,Nein,Ja,,
-Lies dir den Text eines Karnevalslied vor,Aktion,,Nein,Ja,,
-Male ein Lama,Aktion,,Nein,Ja,,Könnten wir noch öfters reinnehmen --> Andere Tiere
-Tanze auf einem Möbelstück deiner Wahl,Aktion,,Nein,Ja,,
-Tanze deinen besten Siegestanz,Aktion,,Nein,Ja,,
-Zünde die Konfettikanone,Aktion,,Ja,Ja,Ja,Ggf. schmeiße das Konfetti über dich?
-Wer ist der größte Lügner?,Aktion,,Nein,Ja,,
-Mache einen Purzelbaum.,Aktion,,Nein,Ja,,
-"Stimme ab, was ihr lieber esst, einen Apfel oder Erdbeeren. Die Leute mit der falschen (Minderheits-) Meinung müssen einen Shot trinken.",Trinken,,Nein,Ja,,"Ggf. mehrere Runden, die Person die es nicht mögen trinken und einer muss die nächste Frages tellen"
-Hänge die Girlande sichtbar auf.,Aktion,,Ja,Ja,Ja,
-Schmincke dich mit geschlossenen Augen.,Aktion,,Ggf.,Ja,Ja,
-Hänge eine Fahne in dein Fenster.,Aktion,,Ja,Ja,Ja,
-Bastel dir einen Karnevalsorden aus den Teilen in der Box.,Aktion,,Ja,Ja,,
-Bastel dir einen Karnevalsorden mit Dingen auf deinem Schreibtisch.,Aktion,,Nein,Ja,,
-Es ist dein Geburtstag alle singen für dich Happy Birthday.,Aktion,,Nein,Ja,,
-Trällere ein Lied.,Aktion,,Nein,Ja,,
-Schätzefrage: Wie viele Stufen der Kölner Dom hat?,Schätzen,,Nein,Ja,,Mit Trinken im Anschluss?
-Erzähle eine peinlich Geschichte.,Aktion,,Nein,Ja,,
-Schätzfrage: Wie alt ist Karneval?,Schätzen,,Nein,Ja,,Mit Trinken im Anschluss?
-Schätzfrage: Wer ist der bekannteste Comedian?,Schätzen,,Nein,Ja,,Auf welcher Grundlage? Mit Trinken im Anschluss?
-"Stoßt auf den ersten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den zweiten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den dritten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den vierten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den fünften Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den sechsten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den siebten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den achten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den neuten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den zehnten Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-"Stoßt auf den elften Leitsatz des Karnevals an. Falls ihr ihn googlen müsst, stoßt nochmal an.",Wissen/Trinken,,Nein,Ja,,
-Stellt das kölsche Grundgesetz zusammen.,Wissen,,Nein,Ja,,
-Beschreibe das Essen “Himmel un Ääd”,Wissen,,Nein,Ja,,
-Beschreibe deine letztes Essen.,Aktion,,Nein,Ja,,
-Was macht für dich Karneval aus?,Aktion,,Nein,Ja,,
-Erzähle deine lustigste Karnevalsgeschichte.,Aktion,,Nein,Ja,,
-Beschreibt das Gericht Halver Hahn.,Wissen,,Nein,Ja,,
-"Wie machst du im Brauhaus bemerkbar, dass du kein Kölsch mehr haben möchtest?",Wissen,,Nein,Ja,,
-Bist du eher Team Kamelle oder Strüssje?,Aktion,,Nein,Ja,,
-Schütte Box 6 über dich.,Aktion,,Ja,Ja,,
-Pflanze eine Blume mit dem Saatgut aus der Box.,Aktion,,Ja,Ja,Ja,
-Glitzer dich mit Glitzer voll.,Aktion,,Ja,Ja,Ja,
-Jeder ohne Kostüm muss einen Shot trinken.,Trinken,,Nein,Ja,,
-Setze die rote Nase aus der Box auf.,Aktion,,Ja,Ja,Ja,
-Versucht alle Kölschsorten aufzuzählen. Wie viele Kölschsorten gibt es?,Wissen,,Nein,Ja,,
-Trinke ein Feigling und trage den Deckel auf der Nase.,Trinken,,Ja,Ja,Ja,
-Schneide dir deine Krawatte ab und klebe dir den Kussmund auf die Wange.,Aktion,,Ja,Ja,Ja,
-Ernennt jemanden der die nächsten 30 min karnevalsmusik im hintergrund laufen lässt,Aktion,,Nein,Ja,,
-Macht ein selfie und postet es.,Aktion,,Nein,Ja,,"FP: Ich persönlich bin nie Fan dieser ""posten""-Aktionskarte in Trinkspielen"
-Leere spielkarten um eigene ereigniskarten zu erstellen,Aktion,,Nein,Ja,,
-Textet eine karnevalsliedstrophe und postet diese unter … facebookpage,Aktion,,Nein,Ja,,"FP: Ich persönlich bin nie Fan dieser ""posten""-Aktionskarte in Trinkspielen"
-Blase die Luftschlangen auf,Aktion,,Ja,Ja,Ja,
-Wie viel Liter Bier sind in einem Kranz Kölsch? ,Wissen,,,,,
-Welcher Turm vom Kölner Dom ist höher? ,Wissen,,,,,
-Was hat Konrad von Hochstaden in Köln im Mund? ,Wissen,,,,,
-Wie viel Liter Bier wird pro Session in Köln getrunken? ,Wissen,,,,,
-Was ist ein Fisternöllche? ,Wissen,,,,,
-Was ist der Katzenbuckel in Köln? ,Wissen,,,,,
-Wie hoch ist der Mont Troodelöh?  ,Wissen,,,,,
-Was ist der Pletchbach? ,Wissen,,,,,
-Wie viele Veedel hat Köln? ,Wissen,,,,,
+        Bezeichnung,Kategorie,Familienfreundlich?,Antwort (Text),Antwort (URL),Hilfsmittel aus der Box benötigt?,In Spiel mitaufnhemen?,In Box berücksichtigt?,Kommentar
+Schmincke dich mit geschlossenen Augen.,Aktion,Ja,,,Ggf.,Ja,Ja,
+Zünde die Konfettikanone/ oder werft Konfetti über euch,Aktion,Ja,,,Ja,Ja,Ja,Ggf. schmeiße das Konfetti über dich?
+Hänge eine Girlande sichtbar auf.,Aktion,Ja,,,Ja,Ja,Ja,
+Hänge eine Fahne in dein Fenster.,Aktion,Ja,,,Ja,Ja,Ja,
+Fühle dich wie beim Rosenmontagszug und schütte dir Kamelle über den Kopf.,Aktion,Ja,,,Ja,Ja,,
+Pflanze eine Blume mit dem Saatgut aus der Box.,Aktion,Ja,,,Ja,Ja,Ja,
+Glitzer dich mit Glitzer voll.,Aktion,Ja,,,Ja,Ja,Ja,
+Setze dir eine rote Nase auf. ,Aktion,Ja,,,Ja,Ja,Ja,
+Blase die Luftschlangen auf,Aktion,Ja,,,Ja,Ja,Ja,
+Bastel dir einen Karnevalsorden aus den Teilen in der Box.,Aktion,Ja,,,Nein,Nein,,
+Schneide dir deine Krawatte ab und fühl dich gebützt.,Aktion,Ja,,"https://de.wikipedia.org/wiki/Weiberfastnacht#:~:text=Im%20Unterschied%20zum%20Rosenmontag%20und,Symbol%20der%20m%C3%A4nnlichen%20Macht%20abschneiden.",Ja,Nein,Ja,
+"Hole dir ein Bier aus der Box. Wenn die leer ist, hol dir eins aus dem Kühlschrank.",Trinken,Nein,,,Ja,Nein,Ja,Ggf. öfters
+Trinke ein Feigling und trage den Deckel auf der Nase.,Trinken,Nein,,,Ja,Nein,Ja,
+Schaue dir dieses Video an (um das Karnevalssitzungsfeeling zu bekommen),Aktion,Ja,,,Nein,Ja,,Link auf der Karte (QR-Code?)
+Spiele dein Lieblingslied,Aktion,Ja,,,Nein,Ja,,
+Beschreibe dein Lieblingskostüm,Aktion,Ja,,,Nein,Ja,,
+Erzähle einen Witz,Aktion,Ja,,,Nein,Ja,,
+Was ist dein Lieblingsmischgetränk?,Aktion,Nein,,,Nein,Ja,,
+Ein anderer muss einen Witz erzählen,Aktion,Ja,,,Nein,Ja,,
+Lies den Text eines Karnevalslied vor,Aktion,Nein,,,Nein,Ja,,
+"Malt alle ein Lama und zeigt es der Gruppe. (Wer Lust hat, postet es auf Social Media #KarnevalLama) ",Aktion,Ja,,,Nein,Ja,,Könnten wir noch öfters reinnehmen --> Andere Tiere
+Tanze auf einem Möbelstück deiner Wahl,Aktion,Ja,,,Nein,Ja,,
+Tanze deinen besten Siegestanz,Aktion,Ja,,,Nein,Ja,,
+Stimmt auf 3 ab: Wer ist der größte Schnüss Schwade?,Aktion,Nein,,,Nein,Ja,,
+Mache einen Purzelbaum.,Aktion,Ja,,,Nein,Ja,,
+Jeder bastelt einen Karnevalsorden mit Dingen die du findest. Zeit: 5 min. (Social Media #Jeckathon),Aktion,Ja,,,Nein,Ja,,
+Singt gemeinsam den Refrain: Drink doch eine met. ,Aktion,Ja,,,Nein,Ja,,
+Erzähle eine peinlich Geschichte.,Aktion,Ja,,,Nein,Ja,,
+Beschreibe deine lieblings Karnevalsessen. ,Aktion,Ja,,,Nein,Ja,,
+Was macht für dich Karneval aus?,Aktion,Ja,,,Nein,Ja,,
+Erzähle deine lustigste Karnevalsgeschichte.,Aktion,Ja,,,Nein,Ja,,
+Stimmt ab: Eher Team Kamelle oder Strüssje?,Aktion,Ja,,,Nein,Ja,,
+Ernennt jemanden der die nächsten 30 min karnevalsmusik im hintergrund laufen lässt,Aktion,Ja,,,Nein,Ja,,
+Macht ein Selfie und postet es. #Jeckathon,Aktion,Nein,,,Nein,Ja,,"FP: Ich persönlich bin nie Fan dieser ""posten""-Aktionskarte in Trinkspielen"
+Schätzefrage: Wie viele Stufen hat der Kölner Dom?,Schätzen,Ja,,Turmbesteigung Kölner Dom - Der Südturm | KölnTourismus (koelntourismus.de),Nein,Ja,,Mit Trinken im Anschluss?
+Schätzfrage: In welchem Jahr war der erste Rosenmontagszug in Köln?,Schätzen,Ja,,"https://www.koelntourismus.de/sehen-erleben/karneval/geschichte/#:~:text=1823%20wurde%20das%20%E2%80%9EFestordnende%20Komitee,%E2%80%9EThronbesteigung%20des%20Helden%20Carneval%E2%80%9C.",Nein,Ja,,Mit Trinken im Anschluss?
+Mische dir einen Drink mit den Zutaten aus deiner Küche,Aktion,Nein,,,Nein,Ja,,
+Jeder ohne Kostüm muss sich spontan verkleiden. Zeit: 5 min. ,Aktion,Ja,,,Nein,Ja,,
+Stellt das kölsche Grundgesetz zusammen.,Wissen,Ja,,Das Kölsche Grundgesetz: Die 11 Regeln der Domstadt | koeln.de,Nein,Ja,,
+Beschreibe das Essen “Himmel un Ääd”,Wissen,Ja,,Rezept für Himmel und Erde (Himmel un Äd) | koeln.de,Nein,Ja,,
+Beschreibt das Gericht Halver Hahn.,Wissen,Ja,,So ein Käse: Der „Halve Hahn“. (frueh.de),Nein,Ja,,
+"Wie machst du im Brauhaus bemerkbar, dass du kein Kölsch mehr haben möchtest?",Wissen,Nein,,Brauch mit Signalwirkung: Der Deckel auf dem Glas. (frueh.de),Nein,Ja,,
+Versucht alle Kölschsorten aufzuzählen. Wie viele Kölschsorten gibt es?,Wissen,Nein,,Stadtführungen mit Stadtgeschichten Köln - Stadtführungen mit Stadtgeschichten Köln (stadtgeschichten-stadtfuehrungen.koeln),Nein,Ja,,
+Stellt gemeinsam die Leitsätze des Karnevalszusammen. ,Aktion,Ja,,,Nein,Ja,,
+Beschreibt das Verhalten eines Köbes. ,Wissen,Ja,,Kölsches Unikum: Der Köbes. (frueh.de),Nein,Ja,,
+Wie ist das perfekte Kölsch?,Wissen,Nein,,Fürs perfekte Kölsch: Die Kölschstange und das richtige Zapfen. (frueh.de),Nein,Ja,,
+Es ist dein Geburtstag alle singen für dich Happy Birthday.,Aktion,Ja,,,Nein,Nein,,
+Leere spielkarten um eigene Ereigniskarten zu erstellen,Aktion,Ja,,,Nein,Nein,,Postet neue Vorschläge für Eregniskarten unter #Jeckathon
+Textet eine Karnevalsliedstrophe und postet diese unter … facebookpage,Aktion,Ja,,,Nein,Nein,,"FP: Ich persönlich bin nie Fan dieser ""posten""-Aktionskarte in Trinkspielen"
+Schätzfrage: Wer ist der bekannteste Comedian?,Schätzen,Nein,,,Nein,Nein,,Auf welcher Grundlage? Mit Trinken im Anschluss?
+"Stimme ab, was ihr lieber esst, einen Apfel oder Erdbeeren. Die Leute mit der falschen (Minderheits-) Meinung müssen einen Shot trinken.",Trinken,Nein,,,Nein,Nein,,"Ggf. mehrere Runden, die Person die es nicht mögen trinken und einer muss die nächste Frages tellen"
+Wie viel Liter Bier sind in einem Kranz Kölsch? ,Wissen,Nein,11x02l,,,Ja,,
+Welcher Turm vom Kölner Dom ist höher? ,Wissen,Ja,,,,Ja,,
+Was hat Konrad von Hochstaden in Köln im Mund? ,Wissen,Nein,,Rathaus Köln: Figur mit Geschlechtsteil in Mund sorgt für Wirbel - Berliner Morgenpost,,Ja,,
+Wie viel Liter Bier wird pro Session in Köln getrunken? ,Wissen,Nein,,,,Ja,,
+Was ist ein Fisternöllche? ,Wissen,Nein,,,,Ja,,
+Was ist der Katzenbuckel in Köln? ,Wissen,Ja,,https://www.koeln.de/koeln/111_koelner_orte_kleine_bruecke_mit_grossem_panorama_298595.html,,Ja,,
+Wie hoch ist der Mont Troodelöh?  ,Wissen,Ja,"118,04 Metern",http://www.monte-troodeloeh.de/,,Ja,,
+Was ist der Pletchbach? ,Wissen,Ja,Pletschbach (Rhein) – Wikipedia,https://de.wikipedia.org/wiki/Pletschbach_(Rhein),,Ja,,
+Wie viele Veedel hat Köln? ,Wissen,Ja,86 Veedel,,,Ja,,
 `;
 
         const cards = [];
         let status = 'not-playing';
         let cardIndex = -1;
+        let currentCards = [];
 
         const parseRawData = () => {
             const lines = rawData.split('\n');
@@ -166,10 +163,15 @@ Wie viele Veedel hat Köln? ,Wissen,,,,,
                 const card = {
                     type: fields[1],
                     question: fields[0],
+                    isFamilyFriendly: fields[2].toLocaleLowerCase() === 'ja',
                 };
 
-                if (fields[2].trim().length > 0) {
-                    card.answer = field[2];
+                if (fields[3].trim().length > 0) {
+                    card.answer = fields[3];
+                }
+
+                if (fields[4].trim().length > 0) {
+                    card.answerUrl = fields[4];
                 }
 
                 cards.push(card);
@@ -212,22 +214,35 @@ Wie viele Veedel hat Köln? ,Wissen,,,,,
         };
 
         const showNotPlayingScreen = () => {
-            updateHtmlElements(`<h3>Bist du bereit? Spiele mit uns!</h3>`, { click: 'startGame', label: 'Let\'s go!'});
+            updateHtmlElements(
+                `
+                <h3>Bist du bereit? Spiele mit uns!</h3>
+                <input id="family-friendly" name="family-friendly" type="checkbox" /><label for="family-friendly"> Familienfreundliche Version</label>
+                `,
+                { click: 'startGame', label: 'Let\'s go!'},
+            );
         };
 
         const startGame = () => {
             status = 'playing';
-            shuffle(cards);
+
+            shuffle(cards)
+            if (document.getElementById('family-friendly') && !document.getElementById('family-friendly').checked) {
+                currentCards = cards;
+            } else {
+                currentCards = cards.filter(card => card.isFamilyFriendly);
+            }
+
             updateGame();
         };
 
         const showNextCard = () => {
             cardIndex += 1;
-            if (cardIndex === cards.length) {
+            if (cardIndex === currentCards.length) {
                 cardIndex = 0;
             }
 
-            const card = cards[cardIndex];
+            const card = currentCards[cardIndex];
             const nextCardButton = {
                 click: 'nextCard',
                 label: 'Nächste Karte',
@@ -249,13 +264,15 @@ Wie viele Veedel hat Köln? ,Wissen,,,,,
         const nextCard = updateGame;
 
         const showAnswer = () => {
-            const card = cards[cardIndex];
+            const card = currentCards[cardIndex];
+            const more = !!card.answerUrl ? `<p>Weitere Informationen unter <a href="${card.answerUrl}">${card.answerUrl}</a></p>` : '';
 
             updateHtmlElements(
                 `
                 <h3>${card.type}</h3>
                 <p>${card.question}</p>
-                <p>${card.answer}</p>
+                <p><i>${card.answer}</i></p>
+                ${more}
                 `,
                 {
                     click: 'nextCard',
